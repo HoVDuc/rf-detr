@@ -12,13 +12,13 @@
         <meta name="author" content="Roboflow">
       
       
-        <link rel="canonical" href="https://rfdetr.roboflow.com/develop/learn/train/training-parameters/">
+        <link rel="canonical" href="https://rfdetr.roboflow.com/develop/learn/train/loggers/">
       
       
-        <link rel="prev" href="../dataset-formats/">
+        <link rel="prev" href="../augmentations/">
       
       
-        <link rel="next" href="../advanced/">
+        <link rel="next" href="../../export/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Training Parameters - RF-DETR</title>
+        <title>Training Loggers - RF-DETR</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#training-parameters" class="md-skip">
+        <a href="#training-loggers" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +142,7 @@
 
             </a>
             
-              Training Parameters
+              Training Loggers
             
           </span>
         </div>
@@ -845,37 +845,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Training Parameters
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../training-parameters/" class="md-nav__link">
         
   
   
@@ -891,276 +864,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Basic Example
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Core Parameters
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Core Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#understanding-batch-size" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Understanding Batch Size
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#learning-rate-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Learning Rate Parameters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resolution-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Resolution Parameters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#regularization-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Regularization Parameters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hardware-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Hardware Parameters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ema-exponential-moving-average" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        EMA (Exponential Moving Average)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checkpoint-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Checkpoint Parameters
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Checkpoint Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#checkpoint-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Checkpoint Files
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#early-stopping-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Early Stopping Parameters
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Early Stopping Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#early-stopping-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Early Stopping Example
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logging-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Logging Parameters
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Logging Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#logging-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Logging Example
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#evaluation-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Evaluation Parameters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Advanced Parameters
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Advanced Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#scheduler-and-regularization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scheduler and Regularization
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#runtime-and-accelerator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Runtime and Accelerator
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dataloader-tuning" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DataLoader Tuning
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#complete-parameter-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Complete Parameter Reference
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1254,10 +957,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../loggers/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training Loggers
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1273,6 +1003,303 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#csv-always-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV (always active)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tensorboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TensorBoard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TensorBoard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewing Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logged-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logged Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weights-and-biases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weights and Biases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Weights and Biases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logged-metrics_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logged Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clearml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ClearML
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ClearML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workaround-clearml-sdk-auto-binding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workaround: ClearML SDK auto-binding
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mlflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MLflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MLflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-tracking-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Tracking Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-logs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewing Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logged-metrics_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logged Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-multiple-loggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Multiple Loggers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attaching-loggers-via-the-custom-training-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attaching loggers via the Custom Training API
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2205,10 +2232,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basic-example" class="md-nav__link">
+  <a href="#csv-always-active" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Basic Example
+        CSV (always active)
       
     </span>
   </a>
@@ -2216,22 +2243,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-parameters" class="md-nav__link">
+  <a href="#tensorboard" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Parameters
+        TensorBoard
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Core Parameters">
+    <nav class="md-nav" aria-label="TensorBoard">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#understanding-batch-size" class="md-nav__link">
+  <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Understanding Batch Size
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewing Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logged-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logged Metrics
       
     </span>
   </a>
@@ -2244,77 +2304,66 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#learning-rate-parameters" class="md-nav__link">
+  <a href="#weights-and-biases" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Learning Rate Parameters
+        Weights and Biases
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resolution-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Resolution Parameters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#regularization-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Regularization Parameters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hardware-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Hardware Parameters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ema-exponential-moving-average" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        EMA (Exponential Moving Average)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checkpoint-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Checkpoint Parameters
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Checkpoint Parameters">
+    <nav class="md-nav" aria-label="Weights and Biases">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#checkpoint-files" class="md-nav__link">
+  <a href="#setup_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Checkpoint Files
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logged-metrics_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logged Metrics
       
     </span>
   </a>
@@ -2327,22 +2376,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#early-stopping-parameters" class="md-nav__link">
+  <a href="#clearml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Early Stopping Parameters
+        ClearML
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Early Stopping Parameters">
+    <nav class="md-nav" aria-label="ClearML">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#early-stopping-example" class="md-nav__link">
+  <a href="#workaround-clearml-sdk-auto-binding" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Early Stopping Example
+        Workaround: ClearML SDK auto-binding
       
     </span>
   </a>
@@ -2355,22 +2404,77 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#logging-parameters" class="md-nav__link">
+  <a href="#mlflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Logging Parameters
+        MLflow
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Logging Parameters">
+    <nav class="md-nav" aria-label="MLflow">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#logging-example" class="md-nav__link">
+  <a href="#setup_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Logging Example
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-tracking-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Tracking Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-logs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewing Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logged-metrics_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logged Metrics
       
     </span>
   </a>
@@ -2383,10 +2487,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#evaluation-parameters" class="md-nav__link">
+  <a href="#using-multiple-loggers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Evaluation Parameters
+        Using Multiple Loggers
       
     </span>
   </a>
@@ -2394,60 +2498,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#advanced-parameters" class="md-nav__link">
+  <a href="#attaching-loggers-via-the-custom-training-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advanced Parameters
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Advanced Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#scheduler-and-regularization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scheduler and Regularization
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#runtime-and-accelerator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Runtime and Accelerator
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dataloader-tuning" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DataLoader Tuning
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#complete-parameter-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Complete Parameter Reference
+        Attaching loggers via the Custom Training API
       
     </span>
   </a>
@@ -2474,812 +2528,252 @@
   
 
 
-<h1 id="training-parameters">Training Parameters<a class="headerlink" href="#training-parameters" title="Permanent link">&para;</a></h1>
-<p>This page provides a complete reference of all parameters available when training RF-DETR models.</p>
-<h2 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rfdetr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RFDETRMedium</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">model</span> <span class="o">=</span> <span class="n">RFDETRMedium</span><span class="p">()</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">dataset_dir</span><span class="o">=</span><span class="s2">&quot;path/to/dataset&quot;</span><span class="p">,</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">grad_accum_steps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">lr</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;output&quot;</span><span class="p">,</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">)</span>
-</span></code></pre></div>
-<h2 id="core-parameters">Core Parameters<a class="headerlink" href="#core-parameters" title="Permanent link">&para;</a></h2>
-<p>These are the essential parameters for training:</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>dataset_dir</code></td>
-<td><code>str</code></td>
-<td>Required</td>
-<td>Path to your dataset directory. RF-DETR auto-detects if it's in COCO or YOLO format. See <a href="../dataset-formats/">Dataset Formats</a>.</td>
-</tr>
-<tr>
-<td><code>output_dir</code></td>
-<td><code>str</code></td>
-<td><code>"output"</code></td>
-<td>Directory where training artifacts (checkpoints, logs) are saved.</td>
-</tr>
-<tr>
-<td><code>epochs</code></td>
-<td><code>int</code></td>
-<td><code>100</code></td>
-<td>Number of full passes over the training dataset.</td>
-</tr>
-<tr>
-<td><code>batch_size</code></td>
-<td><code>int</code></td>
-<td><code>4</code></td>
-<td>Number of samples processed per iteration. Higher values require more GPU memory.</td>
-</tr>
-<tr>
-<td><code>grad_accum_steps</code></td>
-<td><code>int</code></td>
-<td><code>4</code></td>
-<td>Accumulates gradients over multiple mini-batches. Use with <code>batch_size</code> to achieve effective batch size.</td>
-</tr>
-<tr>
-<td><code>resume</code></td>
-<td><code>str</code></td>
-<td><code>None</code></td>
-<td>Path to a saved checkpoint to continue training. Restores model weights, optimizer state, and scheduler.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="understanding-batch-size">Understanding Batch Size<a class="headerlink" href="#understanding-batch-size" title="Permanent link">&para;</a></h3>
-<p>The <strong>effective batch size</strong> is calculated as:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>effective_batch_size = batch_size × grad_accum_steps × num_gpus
-</span></code></pre></div>
-<p>Recommended configurations for different GPUs (targeting effective batch size of 16):</p>
-<table>
-<thead>
-<tr>
-<th>GPU</th>
-<th>VRAM</th>
-<th><code>batch_size</code></th>
-<th><code>grad_accum_steps</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>A100</td>
-<td>40-80GB</td>
-<td>16</td>
-<td>1</td>
-</tr>
-<tr>
-<td>RTX 4090</td>
-<td>24GB</td>
-<td>8</td>
-<td>2</td>
-</tr>
-<tr>
-<td>RTX 3090</td>
-<td>24GB</td>
-<td>8</td>
-<td>2</td>
-</tr>
-<tr>
-<td>T4</td>
-<td>16GB</td>
-<td>4</td>
-<td>4</td>
-</tr>
-<tr>
-<td>RTX 3070</td>
-<td>8GB</td>
-<td>2</td>
-<td>8</td>
-</tr>
-</tbody>
-</table>
-<h2 id="learning-rate-parameters">Learning Rate Parameters<a class="headerlink" href="#learning-rate-parameters" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>lr</code></td>
-<td><code>float</code></td>
-<td><code>1e-4</code></td>
-<td>Learning rate for most parts of the model.</td>
-</tr>
-<tr>
-<td><code>lr_encoder</code></td>
-<td><code>float</code></td>
-<td><code>1.5e-4</code></td>
-<td>Learning rate specifically for the backbone encoder. Can be set lower than <code>lr</code> if you want to fine-tune the encoder more conservatively than the rest of the model.</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition tip">
-<p class="admonition-title">Learning rate tips</p>
-<ul>
-<li>Start with the default values for fine-tuning</li>
-<li>If the model doesn't converge, try reducing <code>lr</code> by half</li>
-<li>For training from scratch (not recommended), you may need higher learning rates</li>
-</ul>
+<h1 id="training-loggers">Training Loggers<a class="headerlink" href="#training-loggers" title="Permanent link">&para;</a></h1>
+<p>RF-DETR supports integration with popular experiment tracking and visualization platforms. You can enable one or more loggers to monitor your training runs, compare experiments, and track metrics over time.</p>
+<h2 id="csv-always-active">CSV (always active)<a class="headerlink" href="#csv-always-active" title="Permanent link">&para;</a></h2>
+<p>A <code>CSVLogger</code> is always active regardless of any flags. It requires no extra packages and writes all metrics to <code>{output_dir}/metrics.csv</code> on every validation step.</p>
+<hr />
+<h2 id="tensorboard">TensorBoard<a class="headerlink" href="#tensorboard" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.tensorflow.org/tensorboard">TensorBoard</a> is a powerful toolkit for visualizing and tracking training metrics.</p>
+<p>TensorBoard logging is enabled by default. Pass <code>tensorboard=False</code> to disable it.</p>
+<div class="admonition note">
+<p class="admonition-title">Missing package behaviour</p>
+<p>If the <code>tensorboard</code> package is not installed, training continues without error — a
+<code>UserWarning</code> is emitted and TensorBoard logging is silently suppressed. Install
+<code>rfdetr[loggers]</code> to avoid this.</p>
 </div>
-<h2 id="resolution-parameters">Resolution Parameters<a class="headerlink" href="#resolution-parameters" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>resolution</code></td>
-<td><code>int</code></td>
-<td>Model-dependent</td>
-<td>Input image resolution. Higher values can improve accuracy but require more memory. <strong>Must be divisible by 14.</strong></td>
-</tr>
-</tbody>
-</table>
-<p>Common resolution values:</p>
-<table>
-<thead>
-<tr>
-<th>Resolution</th>
-<th>Memory Usage</th>
-<th>Use Case</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>560</td>
-<td>Low</td>
-<td>Small objects, limited GPU memory</td>
-</tr>
-<tr>
-<td>672</td>
-<td>Medium</td>
-<td>Balanced (default for many models)</td>
-</tr>
-<tr>
-<td>784</td>
-<td>High</td>
-<td>High accuracy requirements</td>
-</tr>
-<tr>
-<td>896</td>
-<td>Very High</td>
-<td>Maximum quality (requires large GPU)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="regularization-parameters">Regularization Parameters<a class="headerlink" href="#regularization-parameters" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>weight_decay</code></td>
-<td><code>float</code></td>
-<td><code>1e-4</code></td>
-<td>L2 regularization coefficient. Helps prevent overfitting by penalizing large weights.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="hardware-parameters">Hardware Parameters<a class="headerlink" href="#hardware-parameters" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>device</code></td>
-<td><code>str</code></td>
-<td><code>"cuda"</code></td>
-<td>Device to run training on. Options: <code>"cuda"</code>, <code>"cpu"</code>, <code>"mps"</code> (Apple Silicon).</td>
-</tr>
-<tr>
-<td><code>gradient_checkpointing</code></td>
-<td><code>bool</code></td>
-<td><code>False</code></td>
-<td>Re-computes parts of the forward pass during backpropagation to reduce memory usage. Lowers memory needs but increases training time.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="ema-exponential-moving-average">EMA (Exponential Moving Average)<a class="headerlink" href="#ema-exponential-moving-average" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>use_ema</code></td>
-<td><code>bool</code></td>
-<td><code>True</code></td>
-<td>Enables Exponential Moving Average of weights. Produces a smoothed checkpoint that often improves final performance.</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition info">
-<p class="admonition-title">What is EMA?</p>
-<p>EMA maintains a moving average of the model weights throughout training. This smoothed version often generalizes better than the raw weights and is commonly used for the final model.</p>
-</div>
-<h2 id="checkpoint-parameters">Checkpoint Parameters<a class="headerlink" href="#checkpoint-parameters" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>checkpoint_interval</code></td>
-<td><code>int</code></td>
-<td><code>10</code></td>
-<td>Frequency (in epochs) at which model checkpoints are saved. More frequent saves provide better coverage but consume more storage.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="checkpoint-files">Checkpoint Files<a class="headerlink" href="#checkpoint-files" title="Permanent link">&para;</a></h3>
-<p>During training, multiple checkpoints are saved:</p>
-<table>
-<thead>
-<tr>
-<th>File</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>checkpoint.pth</code></td>
-<td>Most recent checkpoint (for resuming)</td>
-</tr>
-<tr>
-<td><code>checkpoint_&lt;N&gt;.pth</code></td>
-<td>Periodic checkpoint at epoch N</td>
-</tr>
-<tr>
-<td><code>checkpoint_best_ema.pth</code></td>
-<td>Best validation performance (EMA weights)</td>
-</tr>
-<tr>
-<td><code>checkpoint_best_regular.pth</code></td>
-<td>Best validation performance (raw weights)</td>
-</tr>
-<tr>
-<td><code>checkpoint_best_total.pth</code></td>
-<td>Final best model for inference</td>
-</tr>
-</tbody>
-</table>
-<h2 id="early-stopping-parameters">Early Stopping Parameters<a class="headerlink" href="#early-stopping-parameters" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>early_stopping</code></td>
-<td><code>bool</code></td>
-<td><code>False</code></td>
-<td>Enable early stopping based on validation mAP.</td>
-</tr>
-<tr>
-<td><code>early_stopping_patience</code></td>
-<td><code>int</code></td>
-<td><code>10</code></td>
-<td>Number of epochs without improvement before stopping.</td>
-</tr>
-<tr>
-<td><code>early_stopping_min_delta</code></td>
-<td><code>float</code></td>
-<td><code>0.001</code></td>
-<td>Minimum change in mAP to qualify as an improvement.</td>
-</tr>
-<tr>
-<td><code>early_stopping_use_ema</code></td>
-<td><code>bool</code></td>
-<td><code>False</code></td>
-<td>Whether to track improvements using EMA model metrics.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="early-stopping-example">Early Stopping Example<a class="headerlink" href="#early-stopping-example" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">dataset_dir</span><span class="o">=</span><span class="s2">&quot;path/to/dataset&quot;</span><span class="p">,</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">epochs</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">early_stopping</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">early_stopping_patience</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">early_stopping_min_delta</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">)</span>
+<h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
+<p>Install the required packages:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;rfdetr[loggers]&quot;</span>
 </span></code></pre></div>
-<p>This configuration will:</p>
-<ul>
-<li>Train for up to 200 epochs</li>
-<li>Stop early if mAP doesn't improve by at least 0.005 for 15 consecutive epochs</li>
-</ul>
-<h2 id="logging-parameters">Logging Parameters<a class="headerlink" href="#logging-parameters" title="Permanent link">&para;</a></h2>
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
+<p>TensorBoard is active unless you explicitly disable it:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rfdetr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RFDETRMedium</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">model</span> <span class="o">=</span> <span class="n">RFDETRMedium</span><span class="p">()</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">dataset_dir</span><span class="o">=</span><span class="s2">&quot;path/to/dataset&quot;</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">grad_accum_steps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="n">lr</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;output&quot;</span><span class="p">,</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="c1"># tensorboard=True is the default; pass tensorboard=False to disable</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="viewing-logs">Viewing Logs<a class="headerlink" href="#viewing-logs" title="Permanent link">&para;</a></h3>
+<p><strong>Local environment:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tensorboard<span class="w"> </span>--logdir<span class="w"> </span>output
+</span></code></pre></div>
+<p>Then open <code>http://localhost:6006/</code> in your browser.</p>
+<p><strong>Google Colab:</strong></p>
+<div class="language-ipython highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">%</span><span class="k">load_ext</span> tensorboard
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="o">%</span><span class="k">tensorboard</span> --logdir output
+</span></code></pre></div>
+<h3 id="logged-metrics">Logged Metrics<a class="headerlink" href="#logged-metrics" title="Permanent link">&para;</a></h3>
+<p>All logged metric keys are listed in the <a href="../customization/#logged-metrics-reference">Logged Metrics Reference</a>.</p>
+<hr />
+<h2 id="weights-and-biases">Weights and Biases<a class="headerlink" href="#weights-and-biases" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.wandb.ai">Weights and Biases (W&amp;B)</a> is a cloud-based platform for experiment tracking and visualization.</p>
+<h3 id="setup_1">Setup<a class="headerlink" href="#setup_1" title="Permanent link">&para;</a></h3>
+<p>Install the required packages:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;rfdetr[loggers]&quot;</span>
+</span></code></pre></div>
+<p>Log in to W&amp;B:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>wandb<span class="w"> </span>login
+</span></code></pre></div>
+<p>You can retrieve your API key at <a href="https://wandb.ai/authorize">wandb.ai/authorize</a>.</p>
+<h3 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link">&para;</a></h3>
+<p>Enable W&amp;B logging in your training:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rfdetr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RFDETRMedium</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">model</span> <span class="o">=</span> <span class="n">RFDETRMedium</span><span class="p">()</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="n">dataset_dir</span><span class="o">=</span><span class="s2">&quot;path/to/dataset&quot;</span><span class="p">,</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="n">grad_accum_steps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span class="n">lr</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;output&quot;</span><span class="p">,</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="n">wandb</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="n">project</span><span class="o">=</span><span class="s2">&quot;my-detection-project&quot;</span><span class="p">,</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    <span class="n">run</span><span class="o">=</span><span class="s2">&quot;experiment-001&quot;</span><span class="p">,</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>Type</th>
-<th>Default</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>tensorboard</code></td>
-<td><code>bool</code></td>
-<td><code>True</code></td>
-<td>Enable TensorBoard logging. Requires <code>pip install "rfdetr[loggers]"</code>. If the <code>tensorboard</code> package is not installed, training continues with a <code>UserWarning</code> and TensorBoard output is silently suppressed.</td>
-</tr>
-<tr>
-<td><code>wandb</code></td>
-<td><code>bool</code></td>
-<td><code>False</code></td>
-<td>Enable Weights &amp; Biases logging. Requires <code>pip install "rfdetr[loggers]"</code>.</td>
-</tr>
 <tr>
 <td><code>project</code></td>
-<td><code>str</code></td>
-<td><code>None</code></td>
-<td>Project name for W&amp;B logging.</td>
+<td>Groups related experiments together</td>
 </tr>
 <tr>
 <td><code>run</code></td>
-<td><code>str</code></td>
-<td><code>None</code></td>
-<td>Run name for W&amp;B logging. If not specified, W&amp;B assigns a random name.</td>
+<td>Identifies individual training sessions</td>
 </tr>
 </tbody>
 </table>
-<h3 id="logging-example">Logging Example<a class="headerlink" href="#logging-example" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">dataset_dir</span><span class="o">=</span><span class="s2">&quot;path/to/dataset&quot;</span><span class="p">,</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">tensorboard</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">wandb</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">project</span><span class="o">=</span><span class="s2">&quot;my-detection-project&quot;</span><span class="p">,</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">run</span><span class="o">=</span><span class="s2">&quot;experiment-001&quot;</span><span class="p">,</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">)</span>
+<p>If you don't specify a run name, W&amp;B assigns a random one automatically.</p>
+<h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h3>
+<p>Access your runs at <a href="https://wandb.ai">wandb.ai</a>. W&amp;B provides:</p>
+<ul>
+<li>Real-time metric visualization</li>
+<li>Experiment comparison</li>
+<li>Hyperparameter tracking</li>
+<li>System metrics (GPU usage, memory)</li>
+<li>Training config logging</li>
+</ul>
+<h3 id="logged-metrics_1">Logged Metrics<a class="headerlink" href="#logged-metrics_1" title="Permanent link">&para;</a></h3>
+<p>All logged metric keys are listed in the <a href="../customization/#logged-metrics-reference">Logged Metrics Reference</a>.</p>
+<hr />
+<h2 id="clearml">ClearML<a class="headerlink" href="#clearml" title="Permanent link">&para;</a></h2>
+<p><a href="https://clear.ml">ClearML</a> is an open-source platform for managing, tracking, and automating machine learning experiments.</p>
+<p><strong>ClearML is not yet integrated as a native PTL logger.</strong> Passing <code>clearml=True</code> to <code>model.train()</code> emits a <code>UserWarning</code> and has no other effect — metrics are not logged to ClearML.</p>
+<h3 id="workaround-clearml-sdk-auto-binding">Workaround: ClearML SDK auto-binding<a class="headerlink" href="#workaround-clearml-sdk-auto-binding" title="Permanent link">&para;</a></h3>
+<p>ClearML's SDK captures PyTorch Lightning metrics automatically when a <code>Task</code> is initialised before training begins:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">clearml</span><span class="w"> </span><span class="kn">import</span> <span class="n">Task</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rfdetr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RFDETRMedium</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Initialise before model.train() — ClearML auto-binds to PTL logging</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">task</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">project_name</span><span class="o">=</span><span class="s2">&quot;my-detection-project&quot;</span><span class="p">,</span> <span class="n">task_name</span><span class="o">=</span><span class="s2">&quot;experiment-001&quot;</span><span class="p">)</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">model</span> <span class="o">=</span> <span class="n">RFDETRMedium</span><span class="p">()</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="n">dataset_dir</span><span class="o">=</span><span class="s2">&quot;path/to/dataset&quot;</span><span class="p">,</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    <span class="n">grad_accum_steps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    <span class="n">lr</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;output&quot;</span><span class="p">,</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>    <span class="c1"># Do NOT pass clearml=True — it does nothing</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="p">)</span>
 </span></code></pre></div>
-<h2 id="evaluation-parameters">Evaluation Parameters<a class="headerlink" href="#evaluation-parameters" title="Permanent link">&para;</a></h2>
+<p>Alternatively, attach a ClearML callback directly using the <a href="#attaching-loggers-via-the-custom-training-api">Custom Training API</a>.</p>
+<hr />
+<h2 id="mlflow">MLflow<a class="headerlink" href="#mlflow" title="Permanent link">&para;</a></h2>
+<p><a href="https://mlflow.org/">MLflow</a> is an open-source platform for the machine learning lifecycle that helps track experiments, package code into reproducible runs, and share and deploy models.</p>
+<h3 id="setup_2">Setup<a class="headerlink" href="#setup_2" title="Permanent link">&para;</a></h3>
+<p>Install the required packages:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;rfdetr[loggers]&quot;</span>
+</span></code></pre></div>
+<h3 id="usage_2">Usage<a class="headerlink" href="#usage_2" title="Permanent link">&para;</a></h3>
+<p>Enable MLflow logging in your training:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rfdetr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RFDETRMedium</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">model</span> <span class="o">=</span> <span class="n">RFDETRMedium</span><span class="p">()</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">dataset_dir</span><span class="o">=</span><span class="s2">&quot;path/to/dataset&quot;</span><span class="p">,</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="n">grad_accum_steps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="n">lr</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;output&quot;</span><span class="p">,</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    <span class="n">mlflow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    <span class="n">project</span><span class="o">=</span><span class="s2">&quot;my-detection-project&quot;</span><span class="p">,</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    <span class="n">run</span><span class="o">=</span><span class="s2">&quot;experiment-001&quot;</span><span class="p">,</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="configuration_1">Configuration<a class="headerlink" href="#configuration_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>Type</th>
-<th>Default</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>eval_max_dets</code></td>
-<td><code>int</code></td>
-<td><code>500</code></td>
-<td>Maximum number of detections per image considered during COCO evaluation. Lower values speed up evaluation.</td>
-</tr>
-<tr>
-<td><code>eval_interval</code></td>
-<td><code>int</code></td>
-<td><code>1</code></td>
-<td>Run COCO evaluation every N epochs. Set to a higher value to reduce evaluation overhead during long training runs.</td>
-</tr>
-<tr>
-<td><code>log_per_class_metrics</code></td>
-<td><code>bool</code></td>
-<td><code>True</code></td>
-<td>Log per-class AP metrics to the console and loggers. Disable to reduce log verbosity when there are many classes.</td>
-</tr>
-<tr>
-<td><code>progress_bar</code></td>
-<td><code>bool</code></td>
-<td><code>False</code></td>
-<td>Enable tqdm progress bar during training. Set to <code>True</code> for interactive terminal or notebook use.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="advanced-parameters">Advanced Parameters<a class="headerlink" href="#advanced-parameters" title="Permanent link">&para;</a></h2>
-<p>The parameters below are available for fine-grained control over training behaviour. Most users can leave these at their defaults.</p>
-<h3 id="scheduler-and-regularization">Scheduler and Regularization<a class="headerlink" href="#scheduler-and-regularization" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>lr_scheduler</code></td>
-<td><code>str</code></td>
-<td><code>"step"</code></td>
-<td>Learning rate scheduler type. Options: <code>"step"</code> (step decay at <code>lr_drop</code>) or <code>"cosine"</code> (cosine annealing).</td>
-</tr>
-<tr>
-<td><code>lr_min_factor</code></td>
-<td><code>float</code></td>
-<td><code>0.0</code></td>
-<td>Floor for the cosine scheduler, expressed as a fraction of the initial LR. Ignored when using <code>"step"</code>.</td>
-</tr>
-<tr>
-<td><code>warmup_epochs</code></td>
-<td><code>float</code></td>
-<td><code>0.0</code></td>
-<td>Number of epochs for linear learning rate warmup at the start of training.</td>
-</tr>
-<tr>
-<td><code>drop_path</code></td>
-<td><code>float</code></td>
-<td><code>0.0</code></td>
-<td>Stochastic depth drop-path rate applied to the backbone. Higher values add more regularization.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="runtime-and-accelerator">Runtime and Accelerator<a class="headerlink" href="#runtime-and-accelerator" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>accelerator</code></td>
-<td><code>str</code></td>
-<td><code>"auto"</code></td>
-<td>PyTorch Lightning accelerator selection. <code>"auto"</code> picks GPU if available, then MPS, then CPU.</td>
-</tr>
-<tr>
-<td><code>seed</code></td>
-<td><code>int</code></td>
-<td><code>None</code></td>
-<td>Global random seed for reproducibility. <code>None</code> means no fixed seed is set.</td>
-</tr>
-<tr>
-<td><code>fp16_eval</code></td>
-<td><code>bool</code></td>
-<td><code>False</code></td>
-<td>Run evaluation passes in FP16 precision. Reduces memory usage but may lower numerical precision.</td>
-</tr>
-<tr>
-<td><code>compute_val_loss</code></td>
-<td><code>bool</code></td>
-<td><code>True</code></td>
-<td>Compute and log the detection loss on the validation set each epoch.</td>
-</tr>
-<tr>
-<td><code>compute_test_loss</code></td>
-<td><code>bool</code></td>
-<td><code>True</code></td>
-<td>Compute and log the detection loss during the final test run.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="dataloader-tuning">DataLoader Tuning<a class="headerlink" href="#dataloader-tuning" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>pin_memory</code></td>
-<td><code>bool</code></td>
-<td><code>None</code></td>
-<td>Pin host memory in the DataLoader for faster GPU transfers. <code>None</code> defers to PyTorch Lightning's default.</td>
-</tr>
-<tr>
-<td><code>persistent_workers</code></td>
-<td><code>bool</code></td>
-<td><code>None</code></td>
-<td>Keep DataLoader worker processes alive between epochs. <code>None</code> defers to PyTorch Lightning's default.</td>
-</tr>
-<tr>
-<td><code>prefetch_factor</code></td>
-<td><code>int</code></td>
-<td><code>None</code></td>
-<td>Number of batches to prefetch per DataLoader worker. <code>None</code> uses PyTorch's built-in default.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="complete-parameter-reference">Complete Parameter Reference<a class="headerlink" href="#complete-parameter-reference" title="Permanent link">&para;</a></h2>
-<p>Below is a summary table of all training parameters:</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>dataset_dir</code></td>
-<td>str</td>
-<td>Required</td>
-<td>Path to COCO or YOLO formatted dataset with train/valid/test splits.</td>
-</tr>
-<tr>
-<td><code>output_dir</code></td>
-<td>str</td>
-<td>"output"</td>
-<td>Directory for checkpoints, logs, and other training artifacts.</td>
-</tr>
-<tr>
-<td><code>epochs</code></td>
-<td>int</td>
-<td>100</td>
-<td>Number of full passes over the dataset.</td>
-</tr>
-<tr>
-<td><code>batch_size</code></td>
-<td>int</td>
-<td>4</td>
-<td>Samples per iteration. Balance with <code>grad_accum_steps</code>.</td>
-</tr>
-<tr>
-<td><code>grad_accum_steps</code></td>
-<td>int</td>
-<td>4</td>
-<td>Gradient accumulation steps for effective larger batch sizes.</td>
-</tr>
-<tr>
-<td><code>lr</code></td>
-<td>float</td>
-<td>1e-4</td>
-<td>Learning rate for the model (excluding encoder).</td>
-</tr>
-<tr>
-<td><code>lr_encoder</code></td>
-<td>float</td>
-<td>1.5e-4</td>
-<td>Learning rate for the backbone encoder.</td>
-</tr>
-<tr>
-<td><code>resolution</code></td>
-<td>int</td>
-<td>Model-specific</td>
-<td>Input image size (must be divisible by 14).</td>
-</tr>
-<tr>
-<td><code>weight_decay</code></td>
-<td>float</td>
-<td>1e-4</td>
-<td>L2 regularization coefficient.</td>
-</tr>
-<tr>
-<td><code>device</code></td>
-<td>str</td>
-<td>"cuda"</td>
-<td>Training device: cuda, cpu, or mps.</td>
-</tr>
-<tr>
-<td><code>use_ema</code></td>
-<td>bool</td>
-<td>True</td>
-<td>Enable Exponential Moving Average of weights.</td>
-</tr>
-<tr>
-<td><code>gradient_checkpointing</code></td>
-<td>bool</td>
-<td>False</td>
-<td>Trade compute for memory during backprop.</td>
-</tr>
-<tr>
-<td><code>checkpoint_interval</code></td>
-<td>int</td>
-<td>10</td>
-<td>Save checkpoint every N epochs.</td>
-</tr>
-<tr>
-<td><code>resume</code></td>
-<td>str</td>
-<td>None</td>
-<td>Path to checkpoint for resuming training.</td>
-</tr>
-<tr>
-<td><code>tensorboard</code></td>
-<td>bool</td>
-<td>True</td>
-<td>Enable TensorBoard logging.</td>
-</tr>
-<tr>
-<td><code>wandb</code></td>
-<td>bool</td>
-<td>False</td>
-<td>Enable Weights &amp; Biases logging.</td>
-</tr>
 <tr>
 <td><code>project</code></td>
-<td>str</td>
-<td>None</td>
-<td>W&amp;B project name.</td>
+<td>Sets the experiment name in MLflow</td>
 </tr>
 <tr>
 <td><code>run</code></td>
-<td>str</td>
-<td>None</td>
-<td>W&amp;B run name.</td>
-</tr>
-<tr>
-<td><code>early_stopping</code></td>
-<td>bool</td>
-<td>False</td>
-<td>Enable early stopping.</td>
-</tr>
-<tr>
-<td><code>early_stopping_patience</code></td>
-<td>int</td>
-<td>10</td>
-<td>Epochs without improvement before stopping.</td>
-</tr>
-<tr>
-<td><code>early_stopping_min_delta</code></td>
-<td>float</td>
-<td>0.001</td>
-<td>Minimum mAP change to qualify as improvement.</td>
-</tr>
-<tr>
-<td><code>early_stopping_use_ema</code></td>
-<td>bool</td>
-<td>False</td>
-<td>Use EMA model for early stopping metrics.</td>
-</tr>
-<tr>
-<td><code>eval_max_dets</code></td>
-<td>int</td>
-<td>500</td>
-<td>Maximum detections per image considered during COCO evaluation.</td>
-</tr>
-<tr>
-<td><code>eval_interval</code></td>
-<td>int</td>
-<td>1</td>
-<td>Run COCO evaluation every N epochs.</td>
-</tr>
-<tr>
-<td><code>log_per_class_metrics</code></td>
-<td>bool</td>
-<td>True</td>
-<td>Log per-class AP metrics to the console and loggers.</td>
-</tr>
-<tr>
-<td><code>progress_bar</code></td>
-<td>bool</td>
-<td>False</td>
-<td>Enable tqdm progress bar during training.</td>
-</tr>
-<tr>
-<td><code>accelerator</code></td>
-<td>str</td>
-<td>"auto"</td>
-<td>PyTorch Lightning accelerator. "auto" selects GPU/MPS/CPU automatically.</td>
-</tr>
-<tr>
-<td><code>seed</code></td>
-<td>int</td>
-<td>None</td>
-<td>Random seed for reproducibility. None means no fixed seed.</td>
-</tr>
-<tr>
-<td><code>lr_scheduler</code></td>
-<td>str</td>
-<td>"step"</td>
-<td>Learning rate scheduler type: "step" or "cosine".</td>
-</tr>
-<tr>
-<td><code>lr_min_factor</code></td>
-<td>float</td>
-<td>0.0</td>
-<td>Minimum LR as a fraction of the initial LR (cosine scheduler floor).</td>
-</tr>
-<tr>
-<td><code>warmup_epochs</code></td>
-<td>float</td>
-<td>0.0</td>
-<td>Number of linear warmup epochs at the start of training.</td>
-</tr>
-<tr>
-<td><code>drop_path</code></td>
-<td>float</td>
-<td>0.0</td>
-<td>Stochastic depth drop-path rate for the backbone.</td>
-</tr>
-<tr>
-<td><code>compute_val_loss</code></td>
-<td>bool</td>
-<td>True</td>
-<td>Compute and log loss during validation.</td>
-</tr>
-<tr>
-<td><code>compute_test_loss</code></td>
-<td>bool</td>
-<td>True</td>
-<td>Compute and log loss during the test run.</td>
-</tr>
-<tr>
-<td><code>fp16_eval</code></td>
-<td>bool</td>
-<td>False</td>
-<td>Run evaluation in FP16 precision to reduce memory usage.</td>
-</tr>
-<tr>
-<td><code>pin_memory</code></td>
-<td>bool</td>
-<td>None</td>
-<td>Pin DataLoader memory. None defers to PyTorch Lightning's default.</td>
-</tr>
-<tr>
-<td><code>persistent_workers</code></td>
-<td>bool</td>
-<td>None</td>
-<td>Keep DataLoader workers alive between epochs. None uses PTL default.</td>
-</tr>
-<tr>
-<td><code>prefetch_factor</code></td>
-<td>int</td>
-<td>None</td>
-<td>Number of batches prefetched per worker. None uses PyTorch default.</td>
+<td>Sets the run name (auto-generated if not specified)</td>
 </tr>
 </tbody>
 </table>
+<h3 id="custom-tracking-server">Custom Tracking Server<a class="headerlink" href="#custom-tracking-server" title="Permanent link">&para;</a></h3>
+<p>To use a custom MLflow tracking server, set environment variables:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># Set MLflow tracking URI</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MLFLOW_TRACKING_URI&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;https://your-mlflow-server.com&quot;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1"># For authentication with tracking servers that require it</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MLFLOW_TRACKING_TOKEN&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;your-auth-token&quot;</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="c1"># Then initialize and train your model</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="n">model</span> <span class="o">=</span> <span class="n">RFDETRMedium</span><span class="p">()</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">mlflow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<p>For teams using a hosted MLflow service (like Databricks), you'll typically need to set:</p>
+<ul>
+<li><code>MLFLOW_TRACKING_URI</code>: The URL of your MLflow tracking server</li>
+<li><code>MLFLOW_TRACKING_TOKEN</code>: Authentication token for your MLflow server</li>
+</ul>
+<h3 id="viewing-logs_1">Viewing Logs<a class="headerlink" href="#viewing-logs_1" title="Permanent link">&para;</a></h3>
+<p>Start the MLflow UI:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mlflow<span class="w"> </span>ui<span class="w"> </span>--backend-store-uri<span class="w"> </span>&lt;OUTPUT_PATH&gt;
+</span></code></pre></div>
+<p>Then open <code>http://localhost:5000</code> in your browser to access the MLflow dashboard.</p>
+<h3 id="logged-metrics_2">Logged Metrics<a class="headerlink" href="#logged-metrics_2" title="Permanent link">&para;</a></h3>
+<p>All logged metric keys are listed in the <a href="../customization/#logged-metrics-reference">Logged Metrics Reference</a>.</p>
+<hr />
+<h2 id="using-multiple-loggers">Using Multiple Loggers<a class="headerlink" href="#using-multiple-loggers" title="Permanent link">&para;</a></h2>
+<p>You can enable multiple logging systems simultaneously:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="n">dataset_dir</span><span class="o">=</span><span class="s2">&quot;path/to/dataset&quot;</span><span class="p">,</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="n">tensorboard</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="n">wandb</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="n">mlflow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    <span class="n">project</span><span class="o">=</span><span class="s2">&quot;my-project&quot;</span><span class="p">,</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    <span class="n">run</span><span class="o">=</span><span class="s2">&quot;experiment-001&quot;</span><span class="p">,</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>This allows you to leverage the strengths of different platforms:</p>
+<ul>
+<li><strong>TensorBoard</strong>: Local visualization and debugging</li>
+<li><strong>W&amp;B</strong>: Cloud-based collaboration and experiment comparison</li>
+<li><strong>MLflow</strong>: Model registry and deployment tracking</li>
+</ul>
+<p>Note: <code>clearml=True</code> is accepted but has no effect in the current version — the flag does not attach a ClearML logger. Use the <a href="#clearml">ClearML SDK workaround</a> instead.</p>
+<hr />
+<h2 id="attaching-loggers-via-the-custom-training-api">Attaching loggers via the Custom Training API<a class="headerlink" href="#attaching-loggers-via-the-custom-training-api" title="Permanent link">&para;</a></h2>
+<p><code>build_trainer</code> automatically creates loggers from <code>TrainConfig</code> flags. To attach a logger not listed above (for example Neptune, Comet, or a fully custom logger), build it separately and append it to <code>trainer.loggers</code> before calling <code>trainer.fit</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rfdetr.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">RFDETRMediumConfig</span><span class="p">,</span> <span class="n">TrainConfig</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rfdetr.training</span><span class="w"> </span><span class="kn">import</span> <span class="n">RFDETRModelModule</span><span class="p">,</span> <span class="n">RFDETRDataModule</span><span class="p">,</span> <span class="n">build_trainer</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="n">model_config</span> <span class="o">=</span> <span class="n">RFDETRMediumConfig</span><span class="p">(</span><span class="n">num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="n">train_config</span> <span class="o">=</span> <span class="n">TrainConfig</span><span class="p">(</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    <span class="n">dataset_dir</span><span class="o">=</span><span class="s2">&quot;path/to/dataset&quot;</span><span class="p">,</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;output&quot;</span><span class="p">,</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    <span class="n">tensorboard</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># built-in loggers still work</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="p">)</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="n">module</span> <span class="o">=</span> <span class="n">RFDETRModelModule</span><span class="p">(</span><span class="n">model_config</span><span class="p">,</span> <span class="n">train_config</span><span class="p">)</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="n">datamodule</span> <span class="o">=</span> <span class="n">RFDETRDataModule</span><span class="p">(</span><span class="n">model_config</span><span class="p">,</span> <span class="n">train_config</span><span class="p">)</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="n">trainer</span> <span class="o">=</span> <span class="n">build_trainer</span><span class="p">(</span><span class="n">train_config</span><span class="p">,</span> <span class="n">model_config</span><span class="p">)</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="c1"># Attach any additional PTL-compatible logger</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pytorch_lightning.loggers</span><span class="w"> </span><span class="kn">import</span> <span class="n">CSVLogger</span>  <span class="c1"># example — use any PTL logger</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="n">trainer</span><span class="o">.</span><span class="n">loggers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">CSVLogger</span><span class="p">(</span><span class="n">save_dir</span><span class="o">=</span><span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;extra&quot;</span><span class="p">))</span>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">datamodule</span><span class="p">)</span>
+</span></code></pre></div>
+<p>CSVLogger is always active (it requires no extra packages). All logged metric keys — <code>train/loss</code>, <code>val/mAP_50_95</code>, <code>val/F1</code>, <code>val/ema_mAP_50_95</code>, <code>val/AP/&lt;class&gt;</code>, etc. — are written to every logger in the list.</p>
+<p>→ <strong><a href="../customization/#logged-metrics-reference">Full list of logged metrics</a></strong></p>
 
 
 
