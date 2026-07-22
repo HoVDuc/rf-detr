@@ -467,19 +467,27 @@ class SetCriterion(nn.Module):
         idx = self._get_src_permutation_idx(indices)
         src_boxes = outputs["pred_boxes"][idx]
         target_boxes = torch.cat([t["boxes"][i] for t, (_, i) in zip(targets, indices)], dim=0)
+        weigths_w = max(target_boxes[:,2]) / target_boxes[:,2]
+        weigths_h = max(target_boxes[:,-1]) / target_boxes[:,-1]
+        weigths_w = weigths_w.reshape(-1, 1)
+        weigths_h = weigths_h.reshape(-1, 1)
+        weigths   = (weigths_w + weigths_h) / 2
 
         loss_bbox = F.l1_loss(src_boxes, target_boxes, reduction="none")
+        loss_ratio = loss_bbox[:, 2:] / target_boxes[:,-2:]
+        loss_bbox *= weigths
 
         losses = {}
-        losses["loss_bbox"] = loss_bbox.sum() / num_boxes
-
+        losses["loss_bbox"] = (loss_bbox.sum() + 0.1*loss_ratio.sum()) / num_boxes
         loss_giou = 1 - torch.diag(
             box_ops.generalized_box_iou(
                 box_ops.box_cxcywh_to_xyxy(src_boxes),
                 box_ops.box_cxcywh_to_xyxy(target_boxes),
             )
         )
+        loss_giou *= weigths.squeeze(1)
         losses["loss_giou"] = loss_giou.sum() / num_boxes
+
         return losses
 
     def loss_masks(
